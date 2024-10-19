@@ -11,6 +11,7 @@ import Contactus from './components/Contactus/Contactus.jsx'
 import Login from './components/Login/Login.jsx'
 import Signup from './components/Signup/Signup.jsx'
 import User from './components/User/User.jsx'
+import Github, { gitInfoLoader } from './components/Github/Github.jsx'
 
 // const router = createBrowserRouter([
 //   {
@@ -35,27 +36,33 @@ import User from './components/User/User.jsx'
 //       },{
 //         path:"signup",
 //         element:<Signup />
-      
+
 //       }
 //     ]
 //   }
 // ]);
 
-const router =  createBrowserRouter(
+const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='/' element= {<App />}>
-    <Route path='' element= {<Home />} />
-    <Route path='about' element= {<About />} />
-    <Route path='services' element= {<Services />} />
-    <Route path='contactus' element= {<Contactus />} />
-    <Route path='login' element= {<Login />} />
-    <Route path='signup' element= {<Signup />} />
-    <Route path='user/:userid' element= {<User />} />
+    <Route path='/' element={<App />}>
+      <Route path='' element={<Home />} />
+      <Route path='about' element={<About />} />
+      <Route path='services' element={<Services />} />
+      <Route path='contactus' element={<Contactus />} />
+      <Route
+        loader={gitInfoLoader}
+        path='github'
+        element={<Github />} />
+      <Route path='login' element={<Login />} />
+      <Route path='signup' element={<Signup />} />
+      <Route
+        path='user/:userid'
+        element={<User />} />
     </Route>
   )
 )
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-   <RouterProvider router={router} />
+    <RouterProvider router={router} />
   </StrictMode>,
 )

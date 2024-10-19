@@ -14,6 +14,7 @@ const Navbar = () => {
                 <NavLink to="/about" className={(e)=>{return e.isActive?"text-slate-400" : ""}}><li>About</li></NavLink>
                 <NavLink to="/services" className={(e)=>{return e.isActive?"text-slate-400" : ""}}><li>Services</li></NavLink>
                 <NavLink to="/contactus" className={(e)=>{return e.isActive?"text-slate-400" : ""}}><li>Contact</li></NavLink>
+                <NavLink to="/github" className={(e)=>{return e.isActive?"text-slate-400" : ""}}><li>Github</li></NavLink>
             </ul>
         </div>
         <div className="signup flex gap-0">

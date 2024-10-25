@@ -9,8 +9,16 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center">
-            <h1 className="text-2xl font-bold">MyPortfolio</h1>
+          <div className="flex-shrink-0 text-2xl font-bold flex items-center">
+            {/* <h1 className="text-2xl font-bold">MyPortfolio</h1> */}
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? "text-gray-400" : "hover:text-gray-300"
+              }
+            >
+              MyPortfolio
+            </NavLink>
           </div>
 
           {/* Links */}

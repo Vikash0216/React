@@ -8,8 +8,7 @@ import About from './Components/About/About.jsx';
 import Projects from './Components/Projects/Projects.jsx';
 import Skills from './Components/Skills/Skills.jsx';
 import Contact from './Components/Contact/Contact.jsx';
-import Github from './Components/Github/Github.jsx';
-import ProjectJavascript from './Components/Projects/AllProjects/ProjectJavascript.jsx';
+import Github, {githubLoader } from './Components/Github/Github.jsx';
 import ProjectExpress from './Components/Projects/AllProjects/ProjectExpress.jsx';
 import ProjectNextjs from './Components/Projects/AllProjects/ProjectNextjs.jsx';
 import ProjectReact from './Components/Projects/AllProjects/ProjectReact.jsx';
@@ -34,7 +33,10 @@ const router = createBrowserRouter(
       
       <Route path='skills' element={<Skills />} />
       <Route path='contact' element={<Contact />} />
-      <Route path='github' element={<Github />} />
+      <Route
+       loader={githubLoader}
+       path='github'
+        element={<Github />} />
     </Route>
   )
 );
